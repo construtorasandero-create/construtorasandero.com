@@ -795,7 +795,23 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListene
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+      });
+    }
+  });
+  function closeMenu() {
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if (hamburger) hamburger.classList.remove('open');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+  }
+</script>
+</body>
+</html>
